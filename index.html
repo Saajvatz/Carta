@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Amor con Sorpresa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #bd687c, #ffe6f7);
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 8vw;
+      color: #c42b60;
+      margin-top: 5vh;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 4vw;
+      background: #ff6f91;
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s;
+      margin-top: 5vh;
+    }
+    button:hover { transform: scale(1.05); }
+    #envelopeContainer, #snoopyContainer, #letter { display: none; }
+    #envelope {
+      width: 60vw;
+      max-width: 220px;
+      height: 150px;
+      background: #fff;
+      border: 2px solid #ff6f91;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin: 5vh auto;
+    }
+    #envelope::before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 115px solid transparent;
+      border-right: 115px solid transparent;
+      border-bottom: 25px solid #fff;
+    }
+    #envelope::after {
+      content: "❤️";
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+    }
+    #snoopyImage {
+      width: 70vw;
+      max-width: 300px;
+      transition: opacity 1s ease;
+    }
+    .fade-out { opacity: 0; }
+    #letter {
+      width: 85vw;
+      max-width: 700px;
+      padding: 5vw;
+      background: #fff;
+      border: 3px solid #ff6f91;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    .colibri{
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Para mi niña hermosa</h1>
+  <button id="readLetterBtn">Leer carta</button>
+  <div id="envelopeContainer">
+    <p>¡Toca el sobre! ❤️</p>
+    <div id="envelope"></div>
+  </div>
+  <div id="snoopyContainer">
+    <img id="snoopyImage" src="https://i.pinimg.com/736x/44/f4/23/44f423586622715d7695df0d4db7ce5d.jpg" alt="Snoopy">
+  </div>
+  <div id="letter">
+    <p>Mi amor, mi niña hermosa, Katia: <br> <br>
+
+        Yo se que tuvimos un ploblema, el cual fue terminar y quisiera intentarlo una vez mas, eres lo que mas amo en este mundo y para mi tu lo eres todo, me cuesta decirte las cosas en persona pero hago el mejor intento para expresar mi amor hacia ti, queria esperar para darte esta pequeña sorpresa hasta el 14 pero quise hacerlo lo mas rapido que quiero porque te amo como no tienes idea no quiero a nadie mas que no seas tu y te preguntaras ¿porque hay una imagen de un colibri?, bueno la respuesta es esta <p class="colibri">La promesa del colibri: la cual es amarte con cada revoloteo de sus alas y por cada vez que no estemos juntos un colibrí morira de tristeza porque como dos personas que se aman no podemos estar juntos </p> 
+        
+        En un mar de sueños, donde la luna brilla, Te presento mi amor, una propuesta sencilla. Con hilos de ternura, y un corazón que late, Quiero ser tu hogar, tu refugio, tu abate.
+
+        No busco un "sí" forzado, ni un "no" por temor, Solo un "sí" sincero, que nos lleve a un mejor. Juntos tejeremos, una historia de amor, Donde el "para siempre" sea nuestro mayor valor.
+
+        En cada puntada, una promesa se esconde, De un amor eterno, que nunca se responde. Seré tu compañero, en la calma y la tempestad, Tu escudo protector, tu fortaleza, tu verdad.
+
+        Así que mi niña colchita, mi dulce ilusión, Acepta mi propuesta, bajo la luna de la ilusión. Y juntos construiremos, un mundo de ensueño, Donde el amor sea nuestro eterno dueño.
+          Eres todo lo que amo y quiero que seas mi novia, la respuesta me gustaria saberla y por eso hice esta carta ya que no puedo salir contigo y no se como hacerlo de una forma romantica pero quiero que este pequeño detalle puedas decirme tu respuesta mi amor<br><br>
+        
+        Con todo mi amor, <br> <br>
+        att: Quien quiere ser tu futuro esposo<3</p>
+  </div>
+  <script>
+    document.getElementById('readLetterBtn').addEventListener('click', function() {
+      this.style.display = 'none';
+      document.getElementById('envelopeContainer').style.display = 'block';
+    });
+    document.getElementById('envelope').addEventListener('click', function() {
+      document.getElementById('envelopeContainer').style.display = 'none';
+      document.getElementById('snoopyContainer').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('snoopyImage').classList.add('fade-out');
+        setTimeout(() => {
+          document.getElementById('snoopyContainer').style.display = 'none';
+          document.getElementById('letter').style.display = 'block';
+        }, 1000);
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
